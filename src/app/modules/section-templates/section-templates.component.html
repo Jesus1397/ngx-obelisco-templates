@@ -1,0 +1,24 @@
+<o-navbar
+  logoRoute="/"
+  [routes]="routes"
+  [searchbarItems]="searchbarItems"
+></o-navbar>
+
+<section class="section-components">
+  <div class="component-description-content">
+    <div class="container mt-5">
+      <h2 class="pb-3">Plantillas</h2>
+      <div class="row mt-3">
+        <div class="col-12 col-lg-4 mb-4">
+          <o-access-list [items]="items"></o-access-list>
+        </div>
+        <div class="col-12 col-lg-4 mb-4">
+          <o-access-list [items]="items"></o-access-list>
+        </div>
+        <div class="col-12 col-lg-4 mb-4">
+          <o-access-list [items]="items"></o-access-list>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
