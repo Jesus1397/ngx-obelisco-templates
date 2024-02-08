@@ -8,16 +8,50 @@
   <div class="component-description-content">
     <div class="container mt-5">
       <h2 class="pb-3">Plantillas</h2>
-      <div class="row mt-3">
-        <div class="col-12 col-lg-4 mb-4">
-          <o-access-list [items]="items"></o-access-list>
-        </div>
-        <div class="col-12 col-lg-4 mb-4">
-          <o-access-list [items]="items"></o-access-list>
-        </div>
-        <div class="col-12 col-lg-4 mb-4">
-          <o-access-list [items]="items"></o-access-list>
-        </div>
+      <div class="card-deck max-cards-3 card-column">
+        <o-card
+          title="Pagina de Area"
+          description="Educacion"
+          route="/templates/education"
+          [image]="{
+            src: 'https://gcba.github.io/Obelisco/cards/img-top.jpg',
+            alt: 'descripción de imagen'
+          }"
+          [isBordered]="true"
+        ></o-card>
+
+        <o-card
+          title="Título de la tarjeta"
+          description="Descripción de la tarjeta"
+          route="/components"
+          [image]="{
+            src: 'https://gcba.github.io/Obelisco/cards/img-top.jpg',
+            alt: 'descripción de imagen'
+          }"
+          [isBordered]="true"
+        ></o-card>
+
+        <o-card
+          title="Título de la tarjeta"
+          description="Descripción de la tarjeta"
+          route="/components"
+          [image]="{
+            src: 'https://gcba.github.io/Obelisco/cards/img-top.jpg',
+            alt: 'descripción de imagen'
+          }"
+          [isBordered]="true"
+        ></o-card>
+
+        <o-card
+          title="Título de la tarjeta"
+          description="Descripción de la tarjeta"
+          route="/components"
+          [image]="{
+            src: 'https://gcba.github.io/Obelisco/cards/img-top.jpg',
+            alt: 'descripción de imagen'
+          }"
+          [isBordered]="true"
+        ></o-card>
       </div>
     </div>
   </div>

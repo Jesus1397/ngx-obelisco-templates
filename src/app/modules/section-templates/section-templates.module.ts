@@ -5,6 +5,7 @@ import { SectionTemplatesRoutingModule } from './section-templates-routing.modul
 import { SectionTemplatesComponent } from './section-templates.component';
 import { OAccessModule } from '@gcba/ngx-obelisco/access';
 import { ONavbarModule } from '@gcba/ngx-obelisco/navbar';
+import { OCardModule } from '@gcba/ngx-obelisco/card';
 
 @NgModule({
   declarations: [SectionTemplatesComponent],
@@ -13,6 +14,7 @@ import { ONavbarModule } from '@gcba/ngx-obelisco/navbar';
     SectionTemplatesRoutingModule,
     OAccessModule,
     ONavbarModule,
+    OCardModule,
   ],
 })
 export class SectionTemplatesModule {}
