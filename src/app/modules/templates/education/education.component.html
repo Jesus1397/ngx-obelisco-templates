@@ -514,94 +514,30 @@
   </div>
   <!-- fin: "Mapa de acceso al Ministerio de Educación" -->
 </article>
+
 <!-- inicio institucional -->
-<section class="bg-light py-5">
-  <div class="container mb-3">
-    <h2 class="mb-4">Información institucional</h2>
-    <div class="card-deck max-cards-2 mb-3 pb-3 card-column">
-      <div class="card card-simple panel-sm-horizontal">
-        <img
-          src="https://gcba.github.io/obelisco-demo/assets/panel/soledadAcuna.png"
-          class="rounded-lg"
-          width="104"
-          height="104"
-          alt="Soledad Acuña"
-        />
-        <div class="card-body">
-          <h4 class="card-title">Soledad Acuña</h4>
-          <p class="card-text">Ministro de Educación</p>
-        </div>
-      </div>
-      <div class="card card-simple panel-sm-horizontal">
-        <div class="card-body">
-          <h4 class="card-title">Contacto</h4>
-          <p class="card-text">
-            Teléfono: 6076-6000 <br />
-            Email:
-            <a href="mailto:soledad@bue.edu.ar" target="_blank" rel="noreferrer"
-              >soledad@bue.edu.ar</a
-            >
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-12 col-md-6">
-        <h2 class="mb-4">Seguinos en</h2>
-        <div class="list-group mb-4 mb-md-0">
-          <a href="#" class="list-group-item">
-            <i class="bx bxl-facebook-circle"></i>
-            <div class="access-content">
-              <span class="access-title">Facebook</span>
-            </div>
-          </a>
-          <a href="#" class="list-group-item">
-            <i class="bx bxl-instagram-alt"></i>
-            <div class="access-content">
-              <span class="access-title">Instagram</span>
-            </div>
-          </a>
-          <a href="#" class="list-group-item">
-            <i class="bx bxl-youtube"></i>
-            <div class="access-content">
-              <span class="access-title">Youtube</span>
-            </div>
-          </a>
-          <a href="#" class="list-group-item">
-            <i class="bx bxl-twitter"></i>
-            <div class="access-content">
-              <span class="access-title">Twitter</span>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="col-12 col-md-6">
-        <div class="card">
-          <div class="card-body">
-            <h4 class="mb-1">Ubicación</h4>
-            <p>Dirección: Carlos H. Perette 750.</p>
-            <div class="w-100 mb-3">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.888755725674!2d-58.38227022454956!3d-34.581681272962264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccb1fa6732c4b%3A0xe0081a9aaee2c67b!2sMinisterio%20de%20Educaci%C3%B3n%20de%20la%20Ciudad%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1686840819485!5m2!1ses!2sar"
-                width="100%;"
-                height="146"
-                style="border: 0"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-              ></iframe>
-            </div>
-            <a
-              href="https://mapa.buenosaires.gob.ar/informacion/?lat=-34.581573&amp;lng=-58.380459&amp;zl=15&amp;modo=transporte&amp;dir=Ministerio+de+Educaci%C3%B3n+GCBA+(CABA%2C+CABA)&amp;ilat=-34.581573&amp;ilng=-58.380459&amp;fid=sitios_de_interes%7C2533"
-              class="btn btn-primary btn-lg mt-3"
-              target="_blank"
-              >Cómo llego</a
-            >
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<institutional-block
+  [ceo]="{
+    title: 'Soledad Acuña',
+    description: 'Ministro de Educación',
+    image: {
+      alt: 'Soledad Acuña',
+      src: 'https://gcba.github.io/obelisco-demo/assets/panel/soledadAcuna.png'
+    }
+  }"
+  [contact]="{
+    phone: '6076-6000',
+    email: 'soledad@bue.edu.ar'
+  }"
+  [socialMedia]="[
+    { title: 'Facebook', src: '#' },
+    { title: 'Instagram', src: '#' },
+    { title: 'Youtube', src: '#' },
+    { title: 'Twitter', src: '#' }
+  ]"
+  [map]="educationMap"
+>
+</institutional-block>
+<!-- fin: institucional -->
 
 <o-footer></o-footer>

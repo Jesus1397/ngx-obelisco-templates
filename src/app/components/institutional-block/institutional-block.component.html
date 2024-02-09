@@ -1,0 +1,90 @@
+<section class="bg-light py-5">
+  <div class="container mb-3">
+    <h2 class="mb-4">Información institucional</h2>
+    <div
+      class="card-deck max-cards-2 mb-3 pb-3 card-column"
+      *ngIf="ceo || contact"
+    >
+      <div class="card card-simple panel-sm-horizontal" *ngIf="ceo">
+        <img
+          src="{{ ceo.image?.src }}"
+          class="rounded-lg"
+          width="104"
+          height="104"
+          alt="{{ ceo.image?.alt }}"
+        />
+        <div class="card-body">
+          <h4 class="card-title">{{ ceo.title }}</h4>
+          <p class="card-text">{{ ceo.description }}</p>
+        </div>
+      </div>
+      <div class="card card-simple panel-sm-horizontal" *ngIf="contact">
+        <div class="card-body">
+          <h4 class="card-title">Contacto</h4>
+          <p class="card-text">
+            <span class="d-block" *ngIf="contact.phone">
+              Teléfono: {{ contact.phone }}
+            </span>
+            <span class="d-block" *ngIf="contact.email">
+              Email:
+              <a
+                href="mailto:{{ contact.email }}"
+                target="_blank"
+                rel="noreferrer"
+                >{{ contact.email }}</a
+              >
+            </span>
+            <span class="d-block" *ngIf="contact.address">
+              Dirección: {{ contact.address }}
+            </span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="row" *ngIf="socialMedia || map">
+      <div class="col-12 col-md-6" *ngIf="socialMedia">
+        <h2 class="mb-4">Seguinos en</h2>
+        <div class="list-group mb-4 mb-md-0">
+          <ng-container *ngFor="let media of socialMedia">
+            <a
+              href="{{ media?.src }}"
+              [class.item-sm]="media?.sizeSm"
+              class="list-group-item"
+              *ngIf="media"
+            >
+              <i class="{{ getSocialMediaIcon(media?.title || '') }}"></i>
+              <div class="access-content">
+                <span class="access-title">{{ media?.title }}</span>
+              </div>
+            </a>
+          </ng-container>
+        </div>
+      </div>
+      <div class="col-12 col-md-6" *ngIf="map">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="mb-1">Ubicación</h4>
+            <p>{{ map.address }}</p>
+            <div class="w-100 mb-3">
+              <iframe
+                [src]="sanitizedMapUrl"
+                width="100%;"
+                height="146"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+            <a
+              href="{{ map.srcButton }}"
+              class="btn btn-primary btn-lg mt-3"
+              target="_blank"
+              >Cómo llego</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
