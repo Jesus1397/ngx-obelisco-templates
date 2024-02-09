@@ -1,0 +1,54 @@
+<header class="bg-light pt-3 pb-5 mb-5">
+  <div class="container pt-1">
+    <o-breadcrumb></o-breadcrumb>
+    <div class="row">
+      <div class="col-12 col-lg-8">
+        <div class="mt-2 pt-1">
+          <p *ngIf="badges">
+            <a
+              href="{{ badge.url }}"
+              class="badge badge-{{ badge.type }}"
+              *ngFor="let badge of badges"
+              >{{ badge.text }}</a
+            >
+          </p>
+          <p class="mb-0" *ngIf="headline">
+            <small>{{ headline }}</small>
+          </p>
+          <h1 class="mb-3">{{ title }}</h1>
+          <p class="lead">
+            {{ description }}
+          </p>
+        </div>
+        <div class="d-block d-md-flex flex-wrap pt-3">
+          <ng-content></ng-content>
+        </div>
+        <div class="d-flex flex-row pt-3" *ngIf="socialMedia">
+          Compartir en redes
+          <ul class="list-inline ml-2">
+            <li class="list-inline-item mr-1">
+              <a href="#" target="_blank"
+                ><i class="bx bx-sm bxl-facebook-circle"></i
+              ></a>
+            </li>
+            <li class="list-inline-item mr-1">
+              <a href="#" target="_blank"
+                ><i class="bx bx-sm bxl-instagram"></i
+              ></a>
+            </li>
+            <li class="list-inline-item mr-1">
+              <a href="#" target="_blank"
+                ><i class="bx bx-sm bxl-twitter"></i
+              ></a>
+            </li>
+            <li class="list-inline-item mr-1">
+              <a href="#" target="_blank"
+                ><i class="bx bx-sm bxl-linkedin-square"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
