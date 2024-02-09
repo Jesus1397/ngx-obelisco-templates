@@ -1,0 +1,334 @@
+<o-navbar
+  logoRoute="/"
+  [routes]="routes"
+  [searchbarItems]="searchbarItems"
+></o-navbar>
+<main>
+  <!-- Encabezado de pagina - Inicio -->
+  <page-header
+    title="Cultura"
+    description="Conocé y participá de los programas, espacios y actividades que impulsan y desarrollan la cultura que la Ciudad tiene para vos."
+  >
+    <div class="mb-2 mb-md-3 mr-3">
+      <o-dropdown-navigation
+        dataTarget="education-institutional-dropdown"
+        [dropNavItems]="institutionalDropdownItems"
+        iconRight="expand_more"
+        title="Institucional"
+        [isAnimatedIconRight]="true"
+      ></o-dropdown-navigation>
+    </div>
+    <div class="mb-2 mb-md-3 mr-3">
+      <o-dropdown-navigation
+        dataTarget="education-transparency-dropdown"
+        [dropNavItems]="transparencyDropdownItems"
+        iconRight="expand_more"
+        title="Transparencia activa"
+        [isAnimatedIconRight]="true"
+      ></o-dropdown-navigation>
+    </div>
+    <div class="mb-0 mb-md-3">
+      <o-nav-horizontal
+        [navHorItems]="navOpening"
+        size="lg"
+        [isBordered]="true"
+      ></o-nav-horizontal>
+    </div>
+  </page-header>
+  <!-- Encabezado de pagina - Fin -->
+
+  <!-- Tarjetas verticales con icono Sin borde (Atajos) - Inicio -->
+  <section>
+    <div class="container">
+      <h2 class="sr-only">Tarjetas de Información</h2>
+      <div class="card-deck max-cards-3 card-column">
+        <o-card
+          title="Talleres"
+          description="Participá de talleres en todos los barrios."
+          route="/"
+          icon="palette"
+        ></o-card>
+        <o-card
+          title="Impulso Cultural"
+          description="Solicitá subsidios y apoyo para tus proyectos."
+          route="/"
+          icon="groups"
+        ></o-card>
+        <o-card
+          title="Pase Cultural"
+          description="Información sobre medidas, testeos y vacunación."
+          route="/"
+          icon="confirmation_number"
+        ></o-card>
+        <o-card
+          title="Cultura independiente"
+          description="Conocé los espacios culturales independientes."
+          route="/"
+          icon="theater_comedy"
+        ></o-card>
+        <o-card
+          title="Biblioteca"
+          description="Ingresá a la red de Bibliotecas de la Ciudad."
+          route="/"
+          icon="bx bx-book card-icon"
+        ></o-card>
+        <o-card
+          title="Barrios Creativos"
+          description="Participá de la programación en tu barrio."
+          route="/"
+          icon="map"
+        ></o-card>
+      </div>
+    </div>
+  </section>
+  <!-- Tarjetas verticales con icono Sin borde (Atajos) - Fin -->
+
+  <!-- Destacado banner - Inicio -->
+  <section class="my-5">
+    <o-highlighted
+      title="Vivamos Cultura"
+      description="Es la nueva plataforma que busca dar a conocer el trabajo de los artistas tanto de la cultura independiente como de los diferentes espacios del Ministerio de Cultura de la Ciudad. Vas a poder disfrutar las diferentes propuestas culturales de manera online: obras de teatro, películas, recitales, talleres y mucho más, para todas las edades."
+      [image]="{
+        src: '../../../../assets/templates/cultura/cultura-panel.png',
+        alt: 'Vivamos Cultura'
+      }"
+    >
+      <o-button #child link="#" size="lg" text="Ingresar ahora"></o-button>
+    </o-highlighted>
+  </section>
+  <!-- Destacado banner - Fin -->
+
+  <!-- Tarjetas verticales con imagen Guía cultural -Inicio -->
+  <section>
+    <div class="container">
+      <h2 class="mb-4">Guía cultural</h2>
+      <div class="card-deck max-cards-3 card-column mb-5">
+        <o-card
+          title="Disfrutemos BA"
+          description="Descubrí la agenda cultural y todo lo que podés hacer en la Ciudad."
+          route="/"
+          [image]="{
+            src: '../../../../assets/templates/cultura/cultura-1.png',
+            alt: 'descripción de imagen'
+          }"
+          [isBordered]="true"
+        ></o-card>
+
+        <o-card
+          title="Promoción del libro, las Bibliotecas y la Cultura"
+          description="Conocé la programación cultural en distintos puntos de la Ciudad."
+          route="/"
+          [image]="{
+            src: '../../../../assets/templates/cultura/cultura-2.png',
+            alt: 'descripción de imagen'
+          }"
+          [isBordered]="true"
+        ></o-card>
+        <o-card
+          title="Data Cultura"
+          description="Accedé a gráficos, mapas y estadísticas sobre la cultura en la Ciudad."
+          route="/"
+          [image]="{
+            src: '../../../../assets/templates/cultura/cultura-3.png',
+            alt: 'descripción de imagen'
+          }"
+          [isBordered]="true"
+        ></o-card>
+        <o-card
+          title="Patrimonio"
+          description="Conocé las actividades y servicios del patrimonio cultural de la Ciudad."
+          route="/"
+          [image]="{
+            src: '../../../../assets/templates/cultura/cultura-4.png',
+            alt: 'descripción de imagen'
+          }"
+          [isBordered]="true"
+        ></o-card>
+        <o-card
+          title="Festivales"
+          description="Participá en Ciudad Emergente, Tango BA, Bafici y más."
+          route="/"
+          [image]="{
+            src: '../../../../assets/templates/cultura/cultura-5.png',
+            alt: 'descripción de imagen'
+          }"
+          [isBordered]="true"
+        ></o-card>
+        <o-card
+          title="BA Audiovisual"
+          description="Conocé el plan que apoya al sector audiovisual de la Ciudad."
+          route="/"
+          [image]="{
+            src: '../../../../assets/templates/cultura/cultura-6.png',
+            alt: 'descripción de imagen'
+          }"
+          [isBordered]="true"
+        ></o-card>
+      </div>
+    </div>
+  </section>
+  <!-- Tarjetas verticales con imagen Guía cultural - Fin -->
+
+  <!-- Tarjetas verticales con imagen Espacios Culturales - Inicio -->
+  <section>
+    <div class="container">
+      <h2 class="mb-4">Espacios Culturales</h2>
+      <div class="card-deck max-cards-3 card-column mb-5">
+        <o-card
+          *ngFor="let culturalSpace of ItemsCulturalSpaces"
+          [title]="culturalSpace.title"
+          [description]="culturalSpace.description"
+          [route]="culturalSpace.route"
+          [image]="culturalSpace.image"
+          [isBordered]="true"
+        ></o-card>
+      </div>
+    </div>
+  </section>
+
+  <!-- inicio: noticias -->
+  <section class="container pt-4 mt-2">
+    <h2 class="mb-4">Noticias</h2>
+    <div class="card-deck max-cards-3 card-column">
+      <o-card
+        title="Todas las propuestas para disfrutar el fin de semana en la ..."
+        description="Se destacan el Finde del Turismo, el Día Internacional de los Museos, las finales del ..."
+        route="/"
+        [image]="{
+          src: '../../../../assets/templates/cultura/noticias-cultura-1.png',
+          alt: 'Descripción de imagen'
+        }"
+        [tags]="[{ name: 'Cultura', type: 'secondary' }]"
+        [isBordered]="true"
+      >
+        <small>Fecha de publicación</small></o-card
+      >
+      <o-card
+        title="Actividades para disfrutar los últimos días de la Feria del Libro"
+        description="Hay charlas, talleres, intervenciones artísticas, ciclos de cine y concursos literarios. Más de ..."
+        route="/"
+        [image]="{
+          src: '../../../../assets/templates/cultura/noticias-cultura-2.png',
+          alt: 'Descripción de imagen'
+        }"
+        [tags]="[
+          { name: 'Cultura', type: 'danger' },
+          { name: 'etiqueta', type: 'danger' }
+        ]"
+        [isBordered]="true"
+      >
+        <small>Fecha de publicación</small></o-card
+      >
+      <o-card
+        title="Últimos días para disfrutar del BAFICI"
+        description="Es uno de los más importantes de América Latina, tendrá 450 funciones en 15 sedes ...          "
+        route="/"
+        [image]="{
+          src: '../../../../assets/templates/cultura/noticias-cultura-3.png',
+          alt: 'Descripción de imagen'
+        }"
+        [tags]="[
+          { name: 'Cultura', type: 'secondary' },
+          { name: 'etiqueta', type: 'secondary' }
+        ]"
+        [isBordered]="true"
+      >
+        <small>Fecha de publicación</small></o-card
+      >
+    </div>
+    <div class="mt-4 pt-2 mb-5">
+      <a class="access" href="#" target="_blank" rel="noreferrer">
+        Ver todas las noticias
+      </a>
+    </div>
+  </section>
+  <!-- fin: noticias -->
+
+  <!-- inicio institucional -->
+  <section class="bg-light py-5">
+    <div class="container mb-3">
+      <h2 class="mb-4">Información institucional</h2>
+      <div class="card-deck max-cards-2 mb-3 pb-3 card-column">
+        <div class="card card-simple panel-sm-horizontal">
+          <img
+            src="../../../../assets/templates/cultura/enriqueAvogadro.png"
+            class="rounded-lg"
+            width="104"
+            height="104"
+            alt="Soledad Acuña"
+          />
+          <div class="card-body">
+            <h4 class="card-title">Enrique Avogadro</h4>
+            <p class="card-text">Ministro de Cultura</p>
+          </div>
+        </div>
+        <div class="card card-simple panel-sm-horizontal">
+          <div class="card-body">
+            <h4 class="card-title">Contacto</h4>
+            <p class="card-text">
+              Teléfono: 4323-9682 <br />
+              Email:
+              <a
+                href="mailto:evogadro@buenosaires.gob.ar"
+                target="_blank"
+                rel="noreferrer"
+                >evogadro&#64;buenosaires.gob.ar</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <h2 class="mb-4">Seguinos en</h2>
+          <div class="list-group mb-4 mb-md-0">
+            <a href="#" class="list-group-item">
+              <i class="bx bxl-facebook-circle"></i>
+              <div class="access-content">
+                <span class="access-title">Facebook</span>
+              </div>
+            </a>
+            <a href="#" class="list-group-item">
+              <i class="bx bxl-instagram-alt"></i>
+              <div class="access-content">
+                <span class="access-title">Instagram</span>
+              </div>
+            </a>
+            <a href="#" class="list-group-item">
+              <i class="bx bxl-twitter"></i>
+              <div class="access-content">
+                <span class="access-title">Twitter</span>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="mb-1">Ubicación</h4>
+              <p>Dirección: Av. de Mayo 575</p>
+              <div class="w-100 mb-3">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.838272722172!2d-58.3770198243719!3d-34.608250872952574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccad3a824ceeb%3A0x17b5852c3ae7353c!2sAv.%20de%20Mayo%20575%2C%20C1059%20CABA!5e0!3m2!1ses!2sar!4v1686852040537!5m2!1ses!2sar"
+                  width="100%;"
+                  height="146"
+                  style="border: 0"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+              <a
+                href="https://mapa.buenosaires.gob.ar/comollego/?lat=-34.608485&amp;lng=-58.374404&amp;zl=15&amp;modo=transporte&amp;dir=De+Mayo+Av.+575"
+                class="btn btn-primary btn-lg mt-3"
+                target="_blank"
+                >Cómo llego</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<o-footer></o-footer>
