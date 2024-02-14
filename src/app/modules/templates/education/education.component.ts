@@ -4,18 +4,18 @@ import { ONavbarModule } from '@gcba/ngx-obelisco/navbar';
 import { OFooterComponent } from '@gcba/ngx-obelisco/footer';
 import { ODropdownModule } from '@gcba/ngx-obelisco/dropdown';
 import { ONavModule } from '@gcba/ngx-obelisco/nav';
-import { DropdownNavigationItem } from '@gcba/ngx-obelisco/core/models';
-
-import { PageHeaderComponent } from 'src/app/components/page-header/page-header.component';
-import { InstitutionalBlockComponent } from 'src/app/components/institutional-block/institutional-block.component';
-
-import { TEMPLATES_ROUTES_SEARCHBARITEMS } from 'src/app/constants/navbar.constants';
 import { OCardModule } from '@gcba/ngx-obelisco/card';
 import { OHighlightedModule } from '@gcba/ngx-obelisco/highlighted';
 import { OButtonComponent } from '@gcba/ngx-obelisco/button';
-import { Media } from '@gcba/ngx-obelisco/core/models';
 import { OAccessModule } from '@gcba/ngx-obelisco/access';
 import { OMapModule } from '@gcba/ngx-obelisco/map';
+import { DropdownNavigationItem, Media } from '@gcba/ngx-obelisco/core/models';
+
+import { PageHeaderComponent } from 'src/app/components/page-header/page-header.component';
+import { InstitutionalBlockComponent } from 'src/app/components/institutional-block/institutional-block.component';
+import { MapInstitutionalData } from 'src/app/components/models/institutional-block.models';
+
+import { TEMPLATES_ROUTES_SEARCHBARITEMS } from 'src/app/constants/navbar.constants';
 
 @Component({
   selector: 'app-education',
@@ -29,6 +29,10 @@ import { OMapModule } from '@gcba/ngx-obelisco/map';
     OButtonComponent,
     OAccessModule,
     OMapModule,
+    PageHeaderComponent,
+    ONavModule,
+    ODropdownModule,
+    InstitutionalBlockComponent,
   ],
   templateUrl: './education.component.html',
   styleUrls: ['./education.component.scss'],
@@ -288,27 +292,79 @@ export class EducationComponent {
     },
   ];
 
-  public networks = [
+  //Page Header
+  public institutionalDropdownItems: DropdownNavigationItem[] = [
     {
-      title: 'Facebook',
-      icon: 'bx bxl-facebook-circle',
+      text: 'Ministerio de Educación',
+      link: '#',
     },
     {
-      title: 'Instagram',
-      icon: 'bx bxl-instagram-alt',
+      text: 'Subsecretaría de Carrera Docente',
+      link: '#',
     },
     {
-      title: 'Youtube',
-      icon: 'bx bxl-youtube',
+      text: 'Subsecretaría de Coordinación Pedagógica y Equidad Educativa',
+      link: '#',
     },
     {
-      title: 'Twitter',
-      icon: 'bx bxl-twitter',
+      text: 'Subsecretaría de Tecnología Educativa y Sustentabilidad',
+      link: '#',
+    },
+    {
+      text: 'Subsecretaría Agencia de aprendizaje a lo largo de la vida',
+      link: '#',
+    },
+    {
+      text: 'Subsecretaría de Gestión Económico Financiera y Administración de Recursos',
+      link: '#',
+    },
+    {
+      text: 'Unidad de Evaluación Integral de la Calidad y Equidad Educativa',
+      link: '#',
+    },
+    {
+      text: 'Unidad de Coordinación del Sistema de Formación Docente',
+      link: '#',
+    },
+    {
+      text: 'Organigrama',
+      link: '#',
+    },
+    {
+      text: 'Guía de funcionarios',
+      link: '#',
     },
   ];
 
-  public iframe: Media = {
-    src: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.561313314447!2d-58.40988132452283!3d-34.64052465944252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccb0de7f4d675%3A0xfc2ef5324296a64!2sUspallata%203160%2C%20C1437JCL%20CABA!5e0!3m2!1ses!2sar!4v1704218461718!5m2!1ses!2sar',
-    title: 'Mapa buenos aires',
+  public transparencyDropdownItems: DropdownNavigationItem[] = [
+    {
+      text: 'Declaraciones juradas',
+      link: '#',
+    },
+    {
+      text: 'Trámites y servicios',
+      link: '#',
+    },
+    {
+      text: 'Compras y contrataciones de obra pública',
+      link: '#',
+    },
+  ];
+
+  public navJournal = [
+    {
+      title: 'Agenda educativa 2023',
+      route: '#',
+    },
+  ];
+
+  //Bloque institucional
+  public educationMap: MapInstitutionalData = {
+    description: 'Dirección: Carlos H. Perette 750.',
+    iframe: {
+      src: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.888755725674!2d-58.38227022454956!3d-34.581681272962264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccb1fa6732c4b%3A0xe0081a9aaee2c67b!2sMinisterio%20de%20Educaci%C3%B3n%20de%20la%20Ciudad%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1686840819485!5m2!1ses!2sar',
+    },
+    srcButton:
+      'https://mapa.buenosaires.gob.ar/informacion/?lat=-34.581573&lng=-58.380459&zl=15&modo=transporte&dir=Ministerio+de+Educaci%C3%B3n+GCBA+(CABA%2C+CABA)&ilat=-34.581573&ilng=-58.380459&fid=sitios_de_interes%7C2533',
   };
 }
