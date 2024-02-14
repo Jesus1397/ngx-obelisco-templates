@@ -7,13 +7,15 @@ import {
   SocialMediaInstitutionalData,
 } from '../models/institutional-block.models';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { OMapModule } from '@gcba/ngx-obelisco/map';
+import { OButtonComponent } from '@gcba/ngx-obelisco/button';
 
 @Component({
   selector: 'institutional-block',
   templateUrl: './institutional-block.component.html',
   styleUrls: ['./institutional-block.component.scss'],
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, OMapModule, OButtonComponent],
 })
 export class InstitutionalBlockComponent implements OnInit {
   @Input() ceo?: CeoInstitutionalData;
@@ -39,12 +41,5 @@ export class InstitutionalBlockComponent implements OnInit {
 
   sanitizedMapUrl: SafeResourceUrl = '';
 
-  ngOnInit(): void {
-    //Para url de iframe de map
-    if (this.map && this.map.iframe) {
-      this.sanitizedMapUrl = this.sanitizer.bypassSecurityTrustResourceUrl(
-        this.map.iframe
-      );
-    }
-  }
+  ngOnInit(): void {}
 }

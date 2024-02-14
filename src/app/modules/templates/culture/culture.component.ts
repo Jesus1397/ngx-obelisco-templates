@@ -253,9 +253,10 @@ export class CultureComponent implements OnInit {
 
   //Mapa de bloque institucional
   public cultureMap: MapInstitutionalData = {
-    address: 'Dirección: Av. de Mayo 575',
-    iframe:
-      'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.838272722172!2d-58.3770198243719!3d-34.608250872952574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccad3a824ceeb%3A0x17b5852c3ae7353c!2sAv.%20de%20Mayo%20575%2C%20C1059%20CABA!5e0!3m2!1ses!2sar!4v1686852040537!5m2!1ses!2sar',
+    description: 'Dirección: Av. de Mayo 575',
+    iframe: {
+      src: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.838272722172!2d-58.3770198243719!3d-34.608250872952574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccad3a824ceeb%3A0x17b5852c3ae7353c!2sAv.%20de%20Mayo%20575%2C%20C1059%20CABA!5e0!3m2!1ses!2sar!4v1686852040537!5m2!1ses!2sar'
+    },
     srcButton:
       'https://mapa.buenosaires.gob.ar/comollego/?lat=-34.608485&amp;lng=-58.374404&amp;zl=15&amp;modo=transporte&amp;dir=De+Mayo+Av.+575',
   };

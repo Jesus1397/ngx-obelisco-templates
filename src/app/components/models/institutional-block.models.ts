@@ -19,7 +19,8 @@ export interface SocialMediaInstitutionalData {
 }
 
 export interface MapInstitutionalData {
-  iframe?: string;
+  iframe: Media;
   srcButton?: string;
-  address?: string;
+  description?: string;
+  title?: string;
 }
