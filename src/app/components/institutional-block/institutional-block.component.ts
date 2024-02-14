@@ -37,6 +37,10 @@ export class InstitutionalBlockComponent implements OnInit {
     }
   };
 
+  formatTitleNetwork(text: string): string {
+    return text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
+  }
+
   constructor(private sanitizer: DomSanitizer) {}
 
   sanitizedMapUrl: SafeResourceUrl = '';
