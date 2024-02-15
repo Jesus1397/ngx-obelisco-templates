@@ -1,9 +1,5 @@
 import { Component } from '@angular/core';
 import { DropdownNavigationItem } from '@gcba/ngx-obelisco/core/models';
-import {
-  TEMPLATES_ROUTES,
-  TEMPLATES_ROUTES_SEARCHBARITEMS,
-} from 'src/app/constants/navbar.constants';
 
 @Component({
   selector: 'app-doc',
@@ -11,9 +7,6 @@ import {
   styleUrls: ['./doc.component.scss'],
 })
 export class DocComponent {
-  public routes = TEMPLATES_ROUTES;
-  public searchbarItems = TEMPLATES_ROUTES_SEARCHBARITEMS;
-
   //Page Header example
   public institutionalDropdownItems: DropdownNavigationItem[] = [
     {

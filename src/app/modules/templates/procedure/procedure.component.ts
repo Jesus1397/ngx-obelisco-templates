@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ONavbarModule } from '@gcba/ngx-obelisco/navbar';
 import { OFooterComponent } from '@gcba/ngx-obelisco/footer';
@@ -7,8 +7,6 @@ import { OCollapseComponent } from '@gcba/ngx-obelisco/collapse';
 import { OBlockModule } from '@gcba/ngx-obelisco/block';
 import { OButtonComponent } from '@gcba/ngx-obelisco/button';
 import { Collapse, Step } from '@gcba/ngx-obelisco/core/models';
-
-import { TEMPLATES_ROUTES_SEARCHBARITEMS } from 'src/app/constants/navbar.constants';
 import { PageHeaderComponent } from 'src/app/components/page-header/page-header.component';
 import { BreadcrumbService } from '@gcba/ngx-obelisco/core/services';
 
@@ -28,16 +26,7 @@ import { BreadcrumbService } from '@gcba/ngx-obelisco/core/services';
     OButtonComponent,
   ],
 })
-export class ProcedureComponent implements OnInit {
-  public routes = [
-    {
-      title: 'Templates',
-      route: '/templates',
-    },
-  ];
-
-  public searchbarItems = TEMPLATES_ROUTES_SEARCHBARITEMS;
-
+export class ProcedureComponent {
   //Lista de pasos
   public stepItem: Step = {
     title: 'Título del paso',
@@ -67,7 +56,7 @@ export class ProcedureComponent implements OnInit {
       ],
       defaultRoute: '/route-default',
     });
-    
+
     for (let i = 0; i < 5; i++) {
       if (i < 3) {
         this.stepItems.push(this.stepItem);

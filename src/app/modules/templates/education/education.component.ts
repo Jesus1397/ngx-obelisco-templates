@@ -10,12 +10,9 @@ import { OButtonComponent } from '@gcba/ngx-obelisco/button';
 import { OAccessModule } from '@gcba/ngx-obelisco/access';
 import { OMapModule } from '@gcba/ngx-obelisco/map';
 import { DropdownNavigationItem, Media } from '@gcba/ngx-obelisco/core/models';
-
 import { PageHeaderComponent } from 'src/app/components/page-header/page-header.component';
 import { InstitutionalBlockComponent } from 'src/app/components/institutional-block/institutional-block.component';
 import { MapInstitutionalData } from 'src/app/components/models/institutional-block.models';
-
-import { TEMPLATES_ROUTES_SEARCHBARITEMS } from 'src/app/constants/navbar.constants';
 
 @Component({
   selector: 'app-education',
@@ -38,15 +35,6 @@ import { TEMPLATES_ROUTES_SEARCHBARITEMS } from 'src/app/constants/navbar.consta
   styleUrls: ['./education.component.scss'],
 })
 export class EducationComponent {
-  public routes = [
-    {
-      title: 'Templates',
-      route: '/templates',
-    },
-  ];
-
-  public searchbarItems = TEMPLATES_ROUTES_SEARCHBARITEMS;
-
   public title: string = 'miEscuela';
 
   public description: string =

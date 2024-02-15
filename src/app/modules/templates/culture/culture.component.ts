@@ -8,9 +8,6 @@ import { OButtonComponent } from '@gcba/ngx-obelisco/button';
 import { ODropdownModule } from '@gcba/ngx-obelisco/dropdown';
 import { ONavModule } from '@gcba/ngx-obelisco/nav';
 import { DropdownNavigationItem } from '@gcba/ngx-obelisco/core/models';
-
-import { TEMPLATES_ROUTES_SEARCHBARITEMS } from 'src/app/constants/navbar.constants';
-
 import { PageHeaderComponent } from 'src/app/components/page-header/page-header.component';
 import { InstitutionalBlockComponent } from 'src/app/components/institutional-block/institutional-block.component';
 import { MapInstitutionalData } from 'src/app/components/models/institutional-block.models';
@@ -38,19 +35,7 @@ export enum TagTypes {
     InstitutionalBlockComponent,
   ],
 })
-export class CultureComponent implements OnInit {
-  public routes = [
-    {
-      title: 'Templates',
-      route: '/templates',
-    },
-  ];
-
-  public searchbarItems = TEMPLATES_ROUTES_SEARCHBARITEMS;
-  constructor() {}
-
-  ngOnInit(): void {}
-
+export class CultureComponent {
   //Page Header
   public institutionalDropdownItems: DropdownNavigationItem[] = [
     {
