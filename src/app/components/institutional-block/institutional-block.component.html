@@ -45,21 +45,13 @@
       <div class="col-12 col-md-6" *ngIf="socialMedia">
         <h2 class="mb-4">Seguinos en</h2>
         <div class="list-group mb-4 mb-md-0">
-          <ng-container *ngFor="let media of socialMedia">
-            <a
-              href="{{ media?.src }}"
-              [class.item-sm]="media?.sizeSm"
-              class="list-group-item"
-              *ngIf="media"
-            >
-              <i class="{{ getSocialMediaIcon(media?.title || '') }}"></i>
-              <div class="access-content">
-                <span class="access-title">{{
-                  formatTitleNetwork(media?.title || "")
-                }}</span>
-              </div>
-            </a>
-          </ng-container>
+          <o-access
+            *ngFor="let media of socialMedia"
+            [icon]="getSocialMediaIcon(media?.title || '')"
+            [title]="formatTitleNetwork(media?.title || '')"
+            [route]="media.src ? media.src : '/'"
+            [class.item-sm]="media?.sizeSm"
+          ></o-access>
         </div>
       </div>
       <div class="col-12 col-md-6" *ngIf="map">

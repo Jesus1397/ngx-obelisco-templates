@@ -33,6 +33,10 @@ export class InstitutionalBlockComponent implements OnInit {
         return `bx bxl-${titleLowerCase}-alt`;
       case 'linkedin':
         return `bx bxl-${titleLowerCase}-square`;
+      case 'twitter':
+        return `bx bxl-${titleLowerCase}`;
+      case 'youtube':
+        return `bx bxl-${titleLowerCase}`;
       default:
         return `bx bxl-${titleLowerCase}`;
     }
