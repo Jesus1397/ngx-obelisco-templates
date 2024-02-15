@@ -2,7 +2,7 @@
   .section-components {
     display: flex;
     overflow: hidden;
-    height: 100vh;
+    height: 100%;
 
     @media (max-width: 768px) {
       .sidebar {

@@ -1,0 +1,152 @@
+<main>
+  <!-- Encabezado de pagina - Inicio -->
+  <page-header
+    [title]="'Cultura'"
+    [description]="'Conocé y participá de los programas, espacios y actividades que impulsan y desarrollan la cultura que la Ciudad tiene para vos.'"
+  >
+    <div class="mb-2 mb-md-3 mr-3">
+      <o-dropdown-navigation
+        dataTarget="education-institutional-dropdown"
+        [dropNavItems]="institutionalDropdownItems"
+        iconRight="expand_more"
+        title="Institucional"
+        [isAnimatedIconRight]="true"
+      ></o-dropdown-navigation>
+    </div>
+    <div class="mb-2 mb-md-3 mr-3">
+      <o-dropdown-navigation
+        dataTarget="education-transparency-dropdown"
+        [dropNavItems]="transparencyDropdownItems"
+        iconRight="expand_more"
+        title="Transparencia activa"
+        [isAnimatedIconRight]="true"
+      ></o-dropdown-navigation>
+    </div>
+    <div class="mb-0 mb-md-3">
+      <o-nav-horizontal
+        [navHorItems]="navOpening"
+        size="lg"
+        [isBordered]="true"
+      ></o-nav-horizontal>
+    </div>
+  </page-header>
+  <!-- Encabezado de pagina - Fin -->
+
+  <!-- Tarjetas verticales con icono Sin borde (Atajos) - Inicio -->
+  <section>
+    <div class="container">
+      <h2 class="sr-only">Tarjetas de Información</h2>
+      <div class="card-deck max-cards-3 card-column">
+        <o-card
+          *ngFor="let shortcutsItem of shortcuts"
+          [title]="shortcutsItem.title"
+          [description]="shortcutsItem.description"
+          route="/"
+          [icon]="shortcutsItem.icon"
+        >
+        </o-card>
+      </div>
+    </div>
+  </section>
+  <!-- Tarjetas verticales con icono Sin borde (Atajos) - Fin -->
+
+  <!-- Destacado banner - Inicio -->
+  <section class="my-5">
+    <o-highlighted
+      title="Vivamos Cultura"
+      description="Es la nueva plataforma que busca dar a conocer el trabajo de los artistas tanto de la cultura independiente como de los diferentes espacios del Ministerio de Cultura de la Ciudad. Vas a poder disfrutar las diferentes propuestas culturales de manera online: obras de teatro, películas, recitales, talleres y mucho más, para todas las edades."
+      [image]="{
+        src: '../../../../assets/templates/cultura/cultura-panel.png',
+        alt: 'Vivamos Cultura'
+      }"
+    >
+      <o-button #child link="#" size="lg" text="Ingresar ahora"></o-button>
+    </o-highlighted>
+  </section>
+  <!-- Destacado banner - Fin -->
+
+  <!-- Tarjetas verticales con imagen Guía cultural -Inicio -->
+  <section>
+    <div class="container">
+      <h2 class="mb-4">Guía cultural</h2>
+      <div class="card-deck max-cards-3 card-column mb-5">
+        <o-card
+          *ngFor="let cultureCardsItem of cultureCards"
+          [title]="cultureCardsItem.title"
+          [description]="cultureCardsItem.description"
+          route="/"
+          [image]="cultureCardsItem.image"
+          [isBordered]="true"
+        >
+        </o-card>
+      </div>
+    </div>
+  </section>
+  <!-- Tarjetas verticales con imagen Guía cultural - Fin -->
+
+  <!-- Tarjetas verticales con imagen Espacios Culturales - Inicio -->
+  <section>
+    <div class="container">
+      <h2 class="mb-4">Espacios Culturales</h2>
+      <div class="card-deck max-cards-3 card-column mb-5">
+        <o-card
+          *ngFor="let culturalSpace of itemsCulturalSpaces"
+          [title]="culturalSpace.title"
+          [description]="culturalSpace.description"
+          [route]="culturalSpace.route"
+          [image]="culturalSpace.image"
+          [isBordered]="true"
+        ></o-card>
+      </div>
+    </div>
+  </section>
+
+  <!-- inicio: noticias -->
+  <section class="container pt-4 mt-2">
+    <h2 class="mb-4">Noticias</h2>
+    <div class="card-deck max-cards-3 card-column">
+      <o-card
+        *ngFor="let newsItem of news"
+        [title]="newsItem.title"
+        [description]="newsItem.description"
+        route="/"
+        [image]="newsItem.image"
+        [tags]="newsItem.tags"
+        [isBordered]="true"
+      >
+        <small>{{ newsItem.publicationDate }}</small>
+      </o-card>
+    </div>
+    <div class="mt-4 pt-2 mb-5">
+      <a class="access" href="#" target="_blank" rel="noreferrer">
+        Ver todas las noticias
+      </a>
+    </div>
+  </section>
+  <!-- fin: noticias -->
+
+  <!-- inicio institucional -->
+  <institutional-block
+    [ceo]="{
+      title: 'Enrique Avogadro',
+      description: 'Ministro de Cultura',
+      image: {
+        alt: 'Enrique Avogadro',
+        src: '../../../../assets/templates/cultura/enriqueAvogadro.png'
+      }
+    }"
+    [contact]="{
+      phone: '4323-9682',
+      email: 'evogadro@buenosaires.gob.ar'
+    }"
+    [socialMedia]="[
+      { title: 'Facebook', src: '#' },
+      { title: 'Instagram', src: '#' },
+      { title: 'Twitter', src: '#' }
+    ]"
+    [map]="cultureMap"
+  >
+  </institutional-block>
+  <!-- fin: institucional -->
+</main>
+<o-footer></o-footer>

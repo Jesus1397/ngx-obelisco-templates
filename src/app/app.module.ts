@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { ONavbarModule } from '@gcba/ngx-obelisco/navbar';
 import { HIGHLIGHT_OPTIONS, HighlightModule } from 'ngx-highlightjs';
 import { OCardModule } from '@gcba/ngx-obelisco/card';
+import { PageHeaderComponent } from './components/page-header/page-header.component';
+import { InstitutionalBlockComponent } from './components/institutional-block/institutional-block.component';
 
 @NgModule({
   declarations: [AppComponent],
@@ -15,6 +17,8 @@ import { OCardModule } from '@gcba/ngx-obelisco/card';
     ONavbarModule,
     HighlightModule,
     OCardModule,
+    PageHeaderComponent,
+    InstitutionalBlockComponent
   ],
   providers: [
     {

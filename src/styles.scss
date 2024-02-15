@@ -1,12 +1,12 @@
 body {
   padding: 0px;
   margin: 0px;
-  overflow: scroll;
-  // overflow-x: hidden;
+  // overflow: scroll;
+  // overflow: hidden;
 
-  //   &::-webkit-scrollbar {
-  //     width: 0px;
-  //   }
+  &::-webkit-scrollbar {
+    width: 0px;
+  }
 }
 
 .code {
