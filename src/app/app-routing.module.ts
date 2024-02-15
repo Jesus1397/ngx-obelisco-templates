@@ -12,6 +12,11 @@ const routes: Routes = [
       import('./modules/home/home.module').then((m) => m.HomeModule),
   },
   {
+    path: 'doc',
+    loadChildren: () =>
+      import('./modules/doc/doc.module').then((m) => m.DocModule),
+  },
+  {
     path: 'templates',
     component: SectionTemplatesComponent,
     loadChildren: () =>

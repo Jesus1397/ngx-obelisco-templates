@@ -5,6 +5,10 @@ export const TEMPLATES_ROUTES: NavbarRoute[] = [
     title: 'Templates',
     route: 'templates',
   },
+  {
+    title: 'Documentación',
+    route: 'doc',
+  },
 ];
 
 export const TEMPLATES_ROUTES_SEARCHBARITEMS: SearchbarItem[] = [

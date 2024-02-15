@@ -14,7 +14,7 @@
           description="Educacion"
           route="/templates/education"
           [image]="{
-            src: 'https://gcba.github.io/Obelisco/cards/img-top.jpg',
+            src: 'https://prototyprio.gumlet.io/strapi/779a286a96117152e74eb516a9c2fb9e.webp?format=webp&w=376&dpr=2.6',
             alt: 'descripción de imagen'
           }"
           [isBordered]="true"
@@ -25,7 +25,7 @@
           description="Página de Area"
           route="/templates/culture"
           [image]="{
-            src: 'https://gcba.github.io/Obelisco/cards/img-top.jpg',
+            src: 'https://prototyprio.gumlet.io/strapi/779a286a96117152e74eb516a9c2fb9e.webp?format=webp&w=376&dpr=2.6',
             alt: 'descripción de imagen'
           }"
           [isBordered]="true"
@@ -36,7 +36,7 @@
           description="Trámites"
           route="/templates/procedure"
           [image]="{
-            src: 'https://gcba.github.io/Obelisco/cards/img-top.jpg',
+            src: 'https://prototyprio.gumlet.io/strapi/779a286a96117152e74eb516a9c2fb9e.webp?format=webp&w=376&dpr=2.6',
             alt: 'descripción de imagen'
           }"
           [isBordered]="true"
@@ -47,89 +47,12 @@
           description="Descripción de la tarjeta"
           route="/components"
           [image]="{
-            src: 'https://gcba.github.io/Obelisco/cards/img-top.jpg',
+            src: 'https://prototyprio.gumlet.io/strapi/779a286a96117152e74eb516a9c2fb9e.webp?format=webp&w=376&dpr=2.6',
             alt: 'descripción de imagen'
           }"
           [isBordered]="true"
         ></o-card>
       </div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <h2 class="pb-3">Componente page-header</h2>
-    <div class="bg-light border p-3 mb-3">
-      <p class="my-3">
-        import &lbrace; <strong>PageHeaderComponent</strong> &rbrace; from
-        <strong
-          >'src/app/components/page-header/page-header.component'</strong
-        >
-        ;
-      </p>
-    </div>
-
-    <h3>Propiedades</h3>
-    <p class="m-0"><strong>breadcrumbData: </strong>BreadcrumbRoute[];</p>
-    <p class="m-0"><strong>title: </strong>string;</p>
-    <p class="m-0"><strong>description: </strong>string;</p>
-    <p class="m-0"><strong>badges: </strong>Badge[];</p>
-    <p class="m-0"><strong>headline: </strong>string;</p>
-    <p class="m-0"><strong>socialMedia: </strong>boolean;</p>
-    <h4 class="mt-4">Badge Interface</h4>
-    <p class="m-0">export interface Badge &lbrace;</p>
-    <p class="pl-2 m-0">text?: string;</p>
-    <p class="pl-2 m-0">type?: string;</p>
-    <p class="pl-2 m-0">url?: string;</p>
-    <p class="m-0">&rbrace;</p>
-    <br />
-    <h3>Example</h3>
-    <div class="d-flex flex-wrap flex-lg-nowrap">
-      <div>
-        <page-header
-          title="Educación"
-          description="Nos ocupamos de crear, promover y ejecutar políticas educativas en
-sus niveles inicial, primario, secundario y superior, que conformen un sistema educativo innovador, único e integrado."
-          [badges]="[
-            { text: 'Etiqueta 1' },
-            {
-              text: 'Etiqueta 2',
-              type: 'secondary',
-              url: 'https://www.google.com/'
-            }
-          ]"
-          headline="Jueves 17 de junio de 2022"
-          [socialMedia]="true"
-        >
-          <div class="mb-2 mb-md-3 mr-3">
-            <o-dropdown-navigation
-              dataTarget="education-institutional-dropdown"
-              [dropNavItems]="institutionalDropdownItems"
-              iconRight="expand_more"
-              title="Institucional"
-              [isAnimatedIconRight]="true"
-            ></o-dropdown-navigation>
-          </div>
-          <div class="mb-2 mb-md-3 mr-3">
-            <o-nav-horizontal
-              [navHorItems]="navJournal"
-              size="lg"
-              [isBordered]="true"
-            ></o-nav-horizontal>
-          </div>
-          <div class="mb-0 mb-md-3">
-            <o-dropdown-navigation
-              dataTarget="education-transparency-dropdown"
-              [dropNavItems]="transparencyDropdownItems"
-              iconRight="expand_more"
-              title="Transparencia activa"
-              [isAnimatedIconRight]="true"
-            ></o-dropdown-navigation>
-          </div>
-        </page-header>
-      </div>
-      <pre>{{ pageHeaderExample }}</pre>
     </div>
   </div>
 </section>
