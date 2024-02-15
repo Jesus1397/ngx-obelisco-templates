@@ -54,7 +54,9 @@
             >
               <i class="{{ getSocialMediaIcon(media?.title || '') }}"></i>
               <div class="access-content">
-                <span class="access-title">{{ formatTitleNetwork(media?.title || '') }}</span>
+                <span class="access-title">{{
+                  formatTitleNetwork(media?.title || "")
+                }}</span>
               </div>
             </a>
           </ng-container>

@@ -9,13 +9,14 @@ import {
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { OMapModule } from '@gcba/ngx-obelisco/map';
 import { OButtonComponent } from '@gcba/ngx-obelisco/button';
+import { OAccessModule } from '@gcba/ngx-obelisco/access';
 
 @Component({
   selector: 'institutional-block',
   templateUrl: './institutional-block.component.html',
   styleUrls: ['./institutional-block.component.scss'],
   standalone: true,
-  imports: [CommonModule, OMapModule, OButtonComponent],
+  imports: [CommonModule, OMapModule, OButtonComponent, OAccessModule],
 })
 export class InstitutionalBlockComponent implements OnInit {
   @Input() ceo?: CeoInstitutionalData;

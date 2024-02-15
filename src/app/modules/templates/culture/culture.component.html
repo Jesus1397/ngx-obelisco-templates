@@ -43,41 +43,13 @@
       <h2 class="sr-only">Tarjetas de Información</h2>
       <div class="card-deck max-cards-3 card-column">
         <o-card
-          title="Talleres"
-          description="Participá de talleres en todos los barrios."
+          *ngFor="let shortcutsItem of shortcuts"
+          [title]="shortcutsItem.title"
+          [description]="shortcutsItem.description"
           route="/"
-          icon="palette"
-        ></o-card>
-        <o-card
-          title="Impulso Cultural"
-          description="Solicitá subsidios y apoyo para tus proyectos."
-          route="/"
-          icon="groups"
-        ></o-card>
-        <o-card
-          title="Pase Cultural"
-          description="Información sobre medidas, testeos y vacunación."
-          route="/"
-          icon="confirmation_number"
-        ></o-card>
-        <o-card
-          title="Cultura independiente"
-          description="Conocé los espacios culturales independientes."
-          route="/"
-          icon="theater_comedy"
-        ></o-card>
-        <o-card
-          title="Biblioteca"
-          description="Ingresá a la red de Bibliotecas de la Ciudad."
-          route="/"
-          icon="bx bx-book card-icon"
-        ></o-card>
-        <o-card
-          title="Barrios Creativos"
-          description="Participá de la programación en tu barrio."
-          route="/"
-          icon="map"
-        ></o-card>
+          [icon]="shortcutsItem.icon"
+        >
+        </o-card>
       </div>
     </div>
   </section>
@@ -104,66 +76,14 @@
       <h2 class="mb-4">Guía cultural</h2>
       <div class="card-deck max-cards-3 card-column mb-5">
         <o-card
-          title="Disfrutemos BA"
-          description="Descubrí la agenda cultural y todo lo que podés hacer en la Ciudad."
+          *ngFor="let cultureCardsItem of cultureCards"
+          [title]="cultureCardsItem.title"
+          [description]="cultureCardsItem.description"
           route="/"
-          [image]="{
-            src: '../../../../assets/templates/cultura/cultura-1.png',
-            alt: 'descripción de imagen'
-          }"
+          [image]="cultureCardsItem.image"
           [isBordered]="true"
-        ></o-card>
-
-        <o-card
-          title="Promoción del libro, las Bibliotecas y la Cultura"
-          description="Conocé la programación cultural en distintos puntos de la Ciudad."
-          route="/"
-          [image]="{
-            src: '../../../../assets/templates/cultura/cultura-2.png',
-            alt: 'descripción de imagen'
-          }"
-          [isBordered]="true"
-        ></o-card>
-        <o-card
-          title="Data Cultura"
-          description="Accedé a gráficos, mapas y estadísticas sobre la cultura en la Ciudad."
-          route="/"
-          [image]="{
-            src: '../../../../assets/templates/cultura/cultura-3.png',
-            alt: 'descripción de imagen'
-          }"
-          [isBordered]="true"
-        ></o-card>
-        <o-card
-          title="Patrimonio"
-          description="Conocé las actividades y servicios del patrimonio cultural de la Ciudad."
-          route="/"
-          [image]="{
-            src: '../../../../assets/templates/cultura/cultura-4.png',
-            alt: 'descripción de imagen'
-          }"
-          [isBordered]="true"
-        ></o-card>
-        <o-card
-          title="Festivales"
-          description="Participá en Ciudad Emergente, Tango BA, Bafici y más."
-          route="/"
-          [image]="{
-            src: '../../../../assets/templates/cultura/cultura-5.png',
-            alt: 'descripción de imagen'
-          }"
-          [isBordered]="true"
-        ></o-card>
-        <o-card
-          title="BA Audiovisual"
-          description="Conocé el plan que apoya al sector audiovisual de la Ciudad."
-          route="/"
-          [image]="{
-            src: '../../../../assets/templates/cultura/cultura-6.png',
-            alt: 'descripción de imagen'
-          }"
-          [isBordered]="true"
-        ></o-card>
+        >
+        </o-card>
       </div>
     </div>
   </section>
@@ -191,50 +111,16 @@
     <h2 class="mb-4">Noticias</h2>
     <div class="card-deck max-cards-3 card-column">
       <o-card
-        title="Todas las propuestas para disfrutar el fin de semana en la ..."
-        description="Se destacan el Finde del Turismo, el Día Internacional de los Museos, las finales del ..."
+        *ngFor="let newsItem of news"
+        [title]="newsItem.title"
+        [description]="newsItem.description"
         route="/"
-        [image]="{
-          src: '../../../../assets/templates/cultura/noticias-cultura-1.png',
-          alt: 'Descripción de imagen'
-        }"
-        [tags]="[{ name: 'Cultura', type: 'secondary' }]"
+        [image]="newsItem.image"
+        [tags]="newsItem.tags"
         [isBordered]="true"
       >
-        <small>Fecha de publicación</small></o-card
-      >
-      <o-card
-        title="Actividades para disfrutar los últimos días de la Feria del Libro"
-        description="Hay charlas, talleres, intervenciones artísticas, ciclos de cine y concursos literarios. Más de ..."
-        route="/"
-        [image]="{
-          src: '../../../../assets/templates/cultura/noticias-cultura-2.png',
-          alt: 'Descripción de imagen'
-        }"
-        [tags]="[
-          { name: 'Cultura', type: 'danger' },
-          { name: 'etiqueta', type: 'danger' }
-        ]"
-        [isBordered]="true"
-      >
-        <small>Fecha de publicación</small></o-card
-      >
-      <o-card
-        title="Últimos días para disfrutar del BAFICI"
-        description="Es uno de los más importantes de América Latina, tendrá 450 funciones en 15 sedes ...          "
-        route="/"
-        [image]="{
-          src: '../../../../assets/templates/cultura/noticias-cultura-3.png',
-          alt: 'Descripción de imagen'
-        }"
-        [tags]="[
-          { name: 'Cultura', type: 'secondary' },
-          { name: 'etiqueta', type: 'secondary' }
-        ]"
-        [isBordered]="true"
-      >
-        <small>Fecha de publicación</small></o-card
-      >
+        <small>{{ newsItem.publicationDate }}</small>
+      </o-card>
     </div>
     <div class="mt-4 pt-2 mb-5">
       <a class="access" href="#" target="_blank" rel="noreferrer">
