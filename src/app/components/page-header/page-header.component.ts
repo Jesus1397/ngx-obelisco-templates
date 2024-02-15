@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 import { OBreadcrumbComponent } from '@gcba/ngx-obelisco/breadcrumb';
 import { BreadcrumbService } from '@gcba/ngx-obelisco/core/services';
 import { BreadcrumbRoute } from '@gcba/ngx-obelisco/core/models';
-import { Badge } from '../models/page-header.models';
+import { Badge, SocialMediaHeaderData } from '../models/page-header.models';
+import { getSocialMediaIcon, formatTitleNetwork } from 'src/app/constants/functions.constants';
 
 @Component({
   selector: 'page-header',
@@ -18,8 +19,12 @@ export class PageHeaderComponent implements OnInit {
   @Input() description?: string;
   @Input() badges?: Badge[];
   @Input() headline?: string;
-  @Input() socialMedia?: boolean;
+  @Input() socialMedia?: SocialMediaHeaderData[];
+  
+  public getIcon = getSocialMediaIcon;
 
+  public formatTitle = formatTitleNetwork;
+  
   constructor() {}
 
   ngOnInit(): void {

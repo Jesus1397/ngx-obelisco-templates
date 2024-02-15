@@ -16,6 +16,7 @@ export interface SocialMediaInstitutionalData {
   title?: string;
   src?: string;
   sizeSm?: boolean;
+  icon?: string;
 }
 
 export interface MapInstitutionalData {

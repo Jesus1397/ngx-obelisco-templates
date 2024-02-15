@@ -3,3 +3,9 @@ export interface Badge {
   type?: string;
   url?: string;
 }
+
+export interface SocialMediaHeaderData {
+  title?: string;
+  src?: string;
+  icon?: string;
+}

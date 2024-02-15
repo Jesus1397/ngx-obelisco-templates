@@ -15,21 +15,35 @@
     <p class="m-0"><strong>description: </strong>string;</p>
     <p class="m-0"><strong>badges: </strong>Badge[];</p>
     <p class="m-0"><strong>headline: </strong>string;</p>
-    <p class="m-0"><strong>socialMedia: </strong>boolean;</p>
-    <h4 class="mt-4">Badge Interface</h4>
-    <p class="m-0">export interface Badge &lbrace;</p>
-    <p class="pl-2 m-0">text?: string;</p>
-    <p class="pl-2 m-0">type?: string;</p>
-    <p class="pl-2 m-0">url?: string;</p>
-    <p class="m-0">&rbrace;</p>
+    <p class="m-0"><strong>socialMedia: </strong>SocialMediaHeaderData[];</p>
+    <div class="d-flex">
+      <div class="mr-4">
+        <h4 class="mt-4">Badge Interface</h4>
+        <p class="m-0">export interface Badge &lbrace;</p>
+        <p class="pl-2 m-0">text?: string;</p>
+        <p class="pl-2 m-0">type?: string;</p>
+        <p class="pl-2 m-0">url?: string;</p>
+        <p class="m-0">&rbrace;</p>
+      </div>
+      <div>
+        <h4 class="mt-4">SocialMediaHeaderData Interface</h4>
+        <p class="m-0">export interface SocialMediaHeaderData &lbrace;</p>
+        <p class="pl-2 m-0">title?: string;</p>
+        <p class="pl-2 m-0">src?: string;</p>
+        <p class="pl-2 m-0">icon?: string;</p>
+        <p class="m-0">&rbrace;</p>
+      </div>
+    </div>
+
     <br />
     <h3>Example</h3>
     <div class="d-flex flex-wrap flex-lg-nowrap">
       <div>
         <page-header
-          title="Educación"
-          description="Nos ocupamos de crear, promover y ejecutar políticas educativas en
-sus niveles inicial, primario, secundario y superior, que conformen un sistema educativo innovador, único e integrado."
+          [title]="'Educación'"
+          [description]="
+            'Nos ocupamos de crear, promover y ejecutar políticas educativas en sus niveles inicial, primario, secundario y superior, que conformen un sistema educativo innovador, único e integrado.'
+          "
           [badges]="[
             { text: 'Etiqueta 1' },
             {
@@ -39,7 +53,12 @@ sus niveles inicial, primario, secundario y superior, que conformen un sistema e
             }
           ]"
           headline="Jueves 17 de junio de 2022"
-          [socialMedia]="true"
+          [socialMedia]="[
+            { title: 'facebook', src: '#' },
+            { title: 'instagram', src: '#', icon: 'bx bxl-instagram' },
+            { title: 'twitter', src: '#' },
+            { title: 'linkedin', src: '#' }
+          ]"
         >
           <div class="mb-2 mb-md-3 mr-3">
             <o-dropdown-navigation
@@ -68,7 +87,115 @@ sus niveles inicial, primario, secundario y superior, que conformen un sistema e
           </div>
         </page-header>
       </div>
-      <pre>{{ pageHeaderExample }}</pre>
+      <pre class="bg-dark text-light">{{ pageHeaderExample }}</pre>
+    </div>
+  </div>
+  <div class="container-fluid p-5">
+    <h2 class="pb-3">Componente institutional-block</h2>
+    <div class="bg-light border p-3 mb-3">
+      <p class="my-3">
+        import &lbrace; <strong>InstitutionalBlockComponent</strong> &rbrace;
+        from
+        <strong
+          >'src/app/components/institutional-block/institutional-block.component'</strong
+        >
+        ;
+      </p>
+    </div>
+
+    <h3>Propiedades</h3>
+    <p class="m-0"><strong>ceo: </strong>CeoInstitutionalData;</p>
+    <p class="m-0"><strong>contact: </strong>ContactInstitutionalData;</p>
+    <p class="m-0">
+      <strong>socialMedia: </strong>SocialMediaInstitutionalData;
+    </p>
+    <p class="m-0"><strong>map: </strong>MapInstitutionalData;</p>
+
+    <div
+      class="d-flex flex-wrap justify-content-between"
+      style="gap: 1rem; max-width: 700px"
+    >
+      <div>
+        <h4 class="mt-4">CeoInstitutionalData Interface</h4>
+        <p class="m-0">export interface CeoInstitutionalData &lbrace;</p>
+        <p class="pl-2 m-0">title?: string;</p>
+        <p class="pl-2 m-0">description?: string;</p>
+        <p class="pl-2 m-0">image?: Media;</p>
+        <p class="m-0">&rbrace;</p>
+      </div>
+      <div>
+        <h4 class="mt-4">ContactInstitutionalData Interface</h4>
+        <p class="m-0">export interface ContactInstitutionalData &lbrace;</p>
+        <p class="pl-2 m-0">phone?: string;</p>
+        <p class="pl-2 m-0">email?: string;</p>
+        <p class="pl-2 m-0">address?: string;</p>
+        <p class="m-0">&rbrace;</p>
+      </div>
+    </div>
+    <div
+      class="d-flex flex-wrap justify-content-between"
+      style="gap: 1rem; max-width: 700px"
+    >
+      <div>
+        <h4 class="mt-4">SocialMediaInstitutionalData Interface</h4>
+        <p class="m-0">
+          export interface SocialMediaInstitutionalData &lbrace;
+        </p>
+        <p class="pl-2 m-0">title?: string;</p>
+        <p class="pl-2 m-0">src?: string;</p>
+        <p class="pl-2 m-0">sizeSm?: boolean;</p>
+        <p class="pl-2 m-0">icon?: string;</p>
+        <p class="m-0">&rbrace;</p>
+      </div>
+      <div>
+        <h4 class="mt-4">MapInstitutionalData Interface</h4>
+        <p class="m-0">export interface MapInstitutionalData &lbrace;</p>
+        <p class="pl-2 m-0">iframe: Media;</p>
+        <p class="pl-2 m-0">srcButton?: string;</p>
+        <p class="pl-2 m-0">description?: string;</p>
+        <p class="pl-2 m-0">title?: string;</p>
+        <p class="m-0">&rbrace;</p>
+      </div>
+    </div>
+
+    <br />
+    <h3>Example</h3>
+    <div class="d-flex flex-wrap flex-lg-nowrap">
+      <div style="min-width: 60%; width: 100%">
+        <institutional-block
+          [ceo]="{
+            title: 'Soledad Acuña',
+            description: 'Ministro de Educación',
+            image: {
+              alt: 'Soledad Acuña',
+              src: 'https://gcba.github.io/obelisco-demo/assets/panel/soledadAcuna.png'
+            }
+          }"
+          [contact]="{
+            phone: '6076-6000',
+            email: 'soledad@bue.edu.ar'
+          }"
+          [socialMedia]="[
+            { title: 'Facebook', src: '#' },
+            { title: 'Instagram', src: '#' },
+            { title: 'Youtube', src: '#' },
+            { title: 'Twitter', src: '#' }
+          ]"
+          [map]="{
+            iframe: {
+              src: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.888755725674!2d-58.38227022454956!3d-34.581681272962264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccb1fa6732c4b%3A0xe0081a9aaee2c67b!2sMinisterio%20de%20Educaci%C3%B3n%20de%20la%20Ciudad%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1686840819485!5m2!1ses!2sar'
+            },
+            srcButton:
+              'https://mapa.buenosaires.gob.ar/informacion/?lat=-34.581573&lng=-58.380459&zl=15&modo=transporte&dir=Ministerio+de+Educaci%C3%B3n+GCBA+(CABA%2C+CABA)&ilat=-34.581573&ilng=-58.380459&fid=sitios_de_interes%7C2533',
+            description: 'Dirección: Carlos H. Perette 750.'
+          }"
+        >
+        </institutional-block>
+      </div>
+
+      <pre class="bg-dark text-light" style="min-width: 40%">{{
+        institutionalExample
+      }}</pre>
     </div>
   </div>
 </section>

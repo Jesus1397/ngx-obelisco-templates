@@ -10,7 +10,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { OMapModule } from '@gcba/ngx-obelisco/map';
 import { OButtonComponent } from '@gcba/ngx-obelisco/button';
 import { OAccessModule } from '@gcba/ngx-obelisco/access';
-
+import { getSocialMediaIcon, formatTitleNetwork } from 'src/app/constants/functions.constants';
 @Component({
   selector: 'institutional-block',
   templateUrl: './institutional-block.component.html',
@@ -24,27 +24,9 @@ export class InstitutionalBlockComponent implements OnInit {
   @Input() socialMedia?: SocialMediaInstitutionalData[];
   @Input() map?: MapInstitutionalData;
 
-  getSocialMediaIcon = (title: string): string => {
-    const titleLowerCase = title.toLowerCase();
-    switch (titleLowerCase) {
-      case 'facebook':
-        return `bx bxl-${titleLowerCase}-circle`;
-      case 'instagram':
-        return `bx bxl-${titleLowerCase}-alt`;
-      case 'linkedin':
-        return `bx bxl-${titleLowerCase}-square`;
-      case 'twitter':
-        return `bx bxl-${titleLowerCase}`;
-      case 'youtube':
-        return `bx bxl-${titleLowerCase}`;
-      default:
-        return `bx bxl-${titleLowerCase}`;
-    }
-  };
+  public getIcon = getSocialMediaIcon;
 
-  formatTitleNetwork(text: string): string {
-    return text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
-  }
+  public formatTitle = formatTitleNetwork;
 
   constructor(private sanitizer: DomSanitizer) {}
 
