@@ -4,7 +4,7 @@
     <div class="row">
       <div class="col-12 col-lg-8">
         <div class="mt-2 pt-1">
-          <p *ngIf="badges">
+          <p *ngIf="badges?.length !== 0">
             <a
               href="{{ badge.url }}"
               class="badge badge-{{ badge.type }}"
