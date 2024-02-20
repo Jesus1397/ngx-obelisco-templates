@@ -22,6 +22,8 @@ export class InstitutionalBlockComponent implements OnInit {
   @Input() ceo?: CeoInstitutionalData;
   @Input() contact?: ContactInstitutionalData;
   @Input() socialMedia?: SocialMediaInstitutionalData[];
+  @Input() isSocialMediaHorizontal?: boolean;
+  @Input() maxSocialmediaAccess?: number;
   @Input() map?: MapInstitutionalData;
 
   public getIcon = getSocialMediaIcon;

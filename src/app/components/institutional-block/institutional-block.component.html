@@ -42,12 +42,30 @@
       </div>
     </div>
     <div class="row" *ngIf="socialMedia || map">
-      <div class="col-12 col-md-6" *ngIf="socialMedia">
+      <div
+        class="col-12 col-md-6"
+        *ngIf="socialMedia"
+        [ngClass]="isSocialMediaHorizontal ? 'col-md-12' : 'col-md-6'"
+      >
         <h2 class="mb-4">Seguinos en</h2>
-        <div class="list-group mb-4 mb-md-0">
+        <div
+          class="mb-4"
+          [ngClass]="
+            isSocialMediaHorizontal
+              ? maxSocialmediaAccess
+                ? 'access-deck access-column max-cards-' + maxSocialmediaAccess
+                : 'access-deck access-column max-cards-' +
+                  (socialMedia.length > 2 && socialMedia.length < 5
+                    ? socialMedia.length
+                    : '3')
+              : 'list-group mb-md-0'
+          "
+        >
           <o-access
             *ngFor="let media of socialMedia"
-            [icon]="media.icon != undefined ? media.icon : getIcon(media.title || '')"
+            [icon]="
+              media.icon != undefined ? media.icon : getIcon(media.title || '')
+            "
             [title]="formatTitle(media?.title || '')"
             [route]="media.src ? media.src : '/'"
             [class.item-sm]="media?.sizeSm"
